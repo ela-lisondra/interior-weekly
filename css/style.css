@@ -7,6 +7,8 @@ body {
 	color: #333333;
 	margin: 0 auto 300px auto;
 	width: 900px;
+
+    transition: background-color 1s ease-in;
 }
 
 header {
