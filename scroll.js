@@ -2,7 +2,7 @@ $(document).on('scroll', function() {
     var pixelsFromTop = $(document).scrollTop()
     console.log(pixelsFromTop)
 
-    $('.progress').text(pixelsFromTop + ' pixels from top')
+    $('div.progress div.bar').text(pixelsFromTop + ' pixels from top')
 
     if (pixelsFromTop > 50) {
         $('header').addClass('hidden')
@@ -22,4 +22,15 @@ $(document).on('scroll', function() {
     } else {
         $('body').css('background-color', '#cdccc7')
     }
+
+
+    var documentHeight = $(document).height()
+    var windowHeight = $(window).height()
+
+    var difference = documentHeight - windowHeight
+
+    var percentage = 100 * pixelsFromTop / difference
+
+    $('.bar').css('width', percentage + '%')
+
 })
